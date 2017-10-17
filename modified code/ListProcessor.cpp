@@ -10,85 +10,65 @@
 
 // tom bailey   1030  27 jan 2012
 // Exercise the List class with verbose Node constructor
-//   and destructor.
+// and destructor.
 
 #include "LinkedList.h"
 
 int main() {
 	List cows;
-	cout << "cows list   :  " << cows << endl;
-	cout << "cows count  :  " << cows.getCount() << endl;
-	cout << "cows sum    :  " << cows.getSum();
-	cout << endl << endl;
+	cows.printValues("cows");
 
 	cows.insertAsFirst(1.23);
 	cows.insertAsFirst(2.34);
-	cout << "cows list   :  " << cows << endl;
-	cout << "cows count  :  " << cows.getCount() << endl;
-	cout << "cows sum    :  " << cows.getSum();
-	cout << endl << endl;
+	cows.printValues("cows");
 
 	cows.removeFirst();
-	cout << "cows list   :  " << cows << endl;
-	cout << "cows count  :  " << cows.getCount() << endl;
-	cout << "cows sum    :  " << cows.getSum();
-	cout << endl << endl;
+	cows.printValues("cows");
+
+	cows.insertAsLast(57.4);
 
 	List horses(cows);
-	cout << "cows list   :  " << cows << endl;
-	cout << "cows count  :  " << cows.getCount() << endl;
-	cout << "cows sum    :  " << cows.getSum() << endl;
-	cout << "horses list :  " << horses << endl;
-	cout << "horses count:  " << horses.getCount() << endl;
-	cout << "horses sum  :  " << horses.getSum();
-	cout << endl << endl;
+	cows.printValues("cows");
+
+	horses.insertAsLast(6.8);
+	horses.insertAsLast(7.3);
+
+	horses.printValues("horses");
 
 	horses.removeFirst();
 	horses.insertAsFirst(5.67);
 	cows.insertAsFirst(6.78);
-	cout << "cows list   :  " << cows << endl;
-	cout << "cows count  :  " << cows.getCount() << endl;
-	cout << "cows sum    :  " << cows.getSum() << endl;
-	cout << "horses list :  " << horses << endl;
-	cout << "horses count:  " << horses.getCount() << endl;
-	cout << "horses sum  :  " << horses.getSum();
-	cout << endl << endl;
+
+	cows.printValues("cows");
+	horses.printValues("horses");
 
 	List pigs;
-	cout << "cows list   :  " << cows << endl;
-	cout << "cows count  :  " << cows.getCount() << endl;
-	cout << "cows sum    :  " << cows.getSum() << endl;
-	cout << "horses list :  " << horses << endl;
-	cout << "horses count:  " << horses.getCount() << endl;
-	cout << "horses sum  :  " << horses.getSum() << endl;
-	cout << "pigs list   :  " << pigs << endl;
-	cout << "pigs count  :  " << pigs.getCount() << endl;
-	cout << "pigs sum    :  " << pigs.getSum();
-	cout << endl << endl;
+	cows.printValues("cows");
+	horses.printValues("horses");
+	pigs.printValues("pigs");
+
+	cows.insertAsLast(5.3);
+	cows.insertAsLast(8.2);
+	horses.insertAsLast(9.5);
+	pigs.insertAsLast(1.4);
+	
+	pigs.printValues("pigs");
 
 	pigs = cows;
-	cout << "cows list   :  " << cows << endl;
-	cout << "cows count  :  " << cows.getCount() << endl;
-	cout << "cows sum    :  " << cows.getSum() << endl;
-	cout << "horses list :  " << horses << endl;
-	cout << "horses count:  " << horses.getCount() << endl;
-	cout << "horses sum  :  " << horses.getSum() << endl;
-	cout << "pigs list   :  " << pigs << endl;
-	cout << "pigs count  :  " << pigs.getCount() << endl;
-	cout << "pigs sum    :  " << pigs.getSum();
-	cout << endl << endl;
+	cows.printValues("cows");
+	horses.printValues("horses");
+	pigs.printValues("pigs");
 
 	pigs = horses;
-	cout << "cows list  :  " << cows << endl;
-	cout << "cows count :  " << cows.getCount() << endl;
-	cout << "cows sum    :  " << cows.getSum() << endl;
-	cout << "horses list:  " << horses << endl;
-	cout << "horses count:  " << horses.getCount() << endl;
-	cout << "horses sum  :  " << horses.getSum() << endl;
-	cout << "pigs list  :  " << pigs << endl;
-	cout << "pigs count  :  " << pigs.getCount() << endl;
-	cout << "pigs sum    :  " << pigs.getSum();
-	cout << endl << endl;
+
+	cows.insertAsLast(6.6);
+	cows.insertAsLast(8.1);
+	horses.insertAsLast(3.4);
+	pigs.insertAsLast(4.5);
+
+	cows.printValues("cows");
+	horses.printValues("horses");
+	pigs.printValues("pigs");
 
 	cout << "End of code" << endl;
 

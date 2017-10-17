@@ -61,12 +61,11 @@ public:
 
 
 
-
 	// Added functions
 	int List::getCount();
 	double List::getSum();
 	void insertAsLast(double x);
-
+	void List::printValues(const char* s);
 
 
 	//*** Mutators ***

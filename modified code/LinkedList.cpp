@@ -44,6 +44,22 @@ void List::insertAsFirst(double x) {
 	first_ = new Node(x, first_);
 }
 
+void List::insertAsLast(double x) {
+	if (!empty()) {
+		Node * newn = new Node(x);
+		Node * ptr = first_->next_;
+		Node * last = first_;
+		while (ptr != NULL) {
+			last = ptr;
+			ptr = ptr->next_;
+		}
+		last->next_ = newn;
+		newn->next_ = NULL;
+	} else if (empty()) {
+		insertAsFirst(x);
+	}
+}
+
 double List::removeFirst() {
 	double item = first_->entry_;
 	Node * tempPtr = first_;
@@ -93,6 +109,13 @@ double List::getSum() {
 	}
 
 	return ListSum;
+}
+
+void List::printValues(const char* s) {
+	cout << s << " list   :  " << *this << endl;
+	cout << s << " count  :  " << getCount() << endl;
+	cout << s << " sum    :  " << getSum();
+	cout << endl << endl;
 }
 
 // Iterative version of clone.
